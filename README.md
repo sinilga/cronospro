@@ -1,2 +1,0 @@
-# My page
-my page
