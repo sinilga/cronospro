@@ -1303,6 +1303,7 @@ a.newer-posts:hover {
 .page-footer .page-template a {
 	 text-decoration: none;
 	color: #263959;
+	font-size:50%;
 }
 
 .page-footer .page-share a:hover {
@@ -1493,6 +1494,6 @@ a.newer-posts:hover {
     margin: 0 0 5px;
   }
   .post .post-content .post-title a {
-    font-size: 21px;
+    font-size: 14px;
   }
 }
