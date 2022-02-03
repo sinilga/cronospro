@@ -177,4 +177,4 @@ end
 ## Дополнительные материалы
 
 Форму для банка Primer1, в которой реализован рассмотренный пример 
-и текст ее модуля можно [скачать здесь](http://gihub/sinilga/cronospro/assets/sources/tablesort/). 
+и текст ее модуля можно [скачать здесь](http://gihub.com/sinilga/cronospro/assets/sources/tablesort/). 
