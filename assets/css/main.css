@@ -22,7 +22,7 @@ html {
  */
 body {
   margin: 0;
-  font-size:14pt;	
+  font-size:10pt;	
 }
 
 /**
@@ -777,7 +777,7 @@ template {
 }
 
 html {
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 body {
@@ -1298,12 +1298,12 @@ a.newer-posts:hover {
 
 .page-footer .page-template {
 	color: #808080;
+	font-size:50%;
 }
 
 .page-footer .page-template a {
 	 text-decoration: none;
 	color: #263959;
-	font-size:50%;
 }
 
 .page-footer .page-share a:hover {
