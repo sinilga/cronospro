@@ -777,7 +777,7 @@ template {
 }
 
 html {
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 body {
@@ -1297,8 +1297,8 @@ a.newer-posts:hover {
 }
 
 .page-footer .page-template {
-	color: #808080;
-	font-size:50%;
+	color: #A0A0A0;
+	font-size:30%;
 }
 
 .page-footer .page-template a {
@@ -1494,6 +1494,6 @@ a.newer-posts:hover {
     margin: 0 0 5px;
   }
   .post .post-content .post-title a {
-    font-size: 14px;
+    font-size: 20px;
   }
 }
