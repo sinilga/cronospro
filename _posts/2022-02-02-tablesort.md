@@ -23,7 +23,7 @@ categories: Интерфейс Lua формы
 Предположим у нас есть форма, на которой размещена таблица `table1` (элемент __TableControl__). 
 В этой таблице будем выводить список записей из базы Лицо (ФИО и дату рождения).
 
-```
+```lua
 function Форма_Load( form, event )
 
 --	Начальные установки для таблицы
@@ -88,7 +88,7 @@ end
 Добавим в блок "Начальные установки для таблицы" обработчика `Форма_Load` команды 
 для формирования в заголовке второй строки. 
 
-```
+```lua
 	...
 	Me.table1.TopHdrRows = 2
 	Me.table1.TopHdrHeight = 22	
@@ -107,7 +107,7 @@ end
 
 Модифицируем также обработчик события `CellClick` таблицы:
 
-```
+```lua
 function table1_CellClick( event )
 	if event.RowIndex == -1 then
 		if Me.table1:GetCellText(event.ColumnIndex,-2) == "a" then
@@ -139,7 +139,7 @@ end
 Добьемся, чтобы столбец с датами рождения сортировался по правилам сравнения дат, а не строк.
 Для этого добавим в модуль формы функцию-обработчик события `SortEvaluate` таблицы:
 
-```
+```lua
 function OnSortEvaluate( event )
 	local a,b
 	if event.ColumnIndex == 3 then
@@ -171,7 +171,7 @@ end
 
 Добавим в `Форма_Load` строчку, связывающую событие SortEvaluate с нашим обработчиком ...
 
-```
+```lua
 ...
 --	определяем обработчик события сравнения значений при сортировке
 	Me.table1.SortEvaluate = OnSortEvaluate
