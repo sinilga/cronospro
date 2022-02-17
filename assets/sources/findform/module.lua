@@ -1,3 +1,7 @@
+local conditions = {}
+local education = {}
+local career = {}
+
 function Форма_Load ( form, event )
 
 --	Отчеркиваем область условий
@@ -68,8 +72,30 @@ function MakeRequest()
 		conditions.experience = tonumber(Me.txtExperience.Text)
 	end
 	
+--	образование
+	if #education > 0 then
+		local tmp = {}
+		table.foreach(education, function(k,item) tmp[k] = "4 РВ "..item:quote([["]]) end)
+		conditions.edu = "ОБ02 "..table.concat(tmp, " ИЛИ ")
+		table.insert(conditions,"201 ОБ02")
+	end
+	
+--	опыт работы	
+	if #career > 0 then
+		local tmp = {}
+		table.foreach(career, function(k,item) tmp[k] = "3 РВ "..item:quote([["]]) end)
+		conditions.career = "ТД03 "..table.concat(tmp, " ИЛИ ")
+		table.insert(conditions,"90 ТД03")
+	end
+
 	if #conditions > 0 then
 		req = req.." "..table.concat(conditions," И ")
+		if conditions.edu then
+			req = req.." "..conditions.edu
+		end
+		if conditions.career then 
+			req = req.." "..conditions.career
+		end
 	end
 		
 	return req
@@ -153,4 +179,22 @@ function ExperienceValidation( event )
 	
 --	последний рубеж
 	control.Text = val:match("%d+")
+end
+
+function btnEducation_Click( control, event )
+	args = {field = "ОБ4", title="Направления подготовки",selection = education}
+	GetBank():OpenForm("словарик",0,Me,args)
+	if args.ModalResult == 1 then
+		education = args.selection
+		Me.txtEducation.Text = table.concat(education,"; ")
+	end
+end
+
+function btnCareer_Click( control, event )
+	args = {field = "ТД3", title="Опыт работы",selection = career}
+	GetBank():OpenForm("словарик",0,Me,args)
+	if args.ModalResult == 1 then
+		career = args.selection
+		Me.txtCareer.Text = table.concat(career,"; ")
+	end
 end
