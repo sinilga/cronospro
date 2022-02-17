@@ -18,7 +18,6 @@ function Форма_Load ( form, event )
 			ctrl.TypeValidationCompleted = ExperienceValidation
 		end	
 	end
-	
 end
 
 function Line(name, y)
@@ -41,12 +40,69 @@ function btnFind_Click( control, event )
 			MsgBox("Подходящих записей не найдено")
 		else
 		--	отображение найденных записей
+			if conditions.experience then
+				rs = FilterByExperience(rs)
+			end	
 			GetBank():GetBase("ЛЦ"):OpenReview(rs)
 			Me.WindowState = Form.Minimized
 		end
 	else
 		MsgBox(err)
 	end
+end
+
+function makedate(val,mode)
+--	пустое значение: дата отсутствует
+	if val == "" then
+		return DateTime.Now
+	end
+	local date = DateTime(val)
+	if date.IsValid and date <= DateTime.Now then
+		return date
+	elseif date.IsValid then	
+		return DateTime.Now
+	end
+	
+--	обработка неполных дат
+	if not mode or mode == "min" then
+		val = val:gsub("^00%.","01.")
+		val = val:gsub("%.00%.",".01.")
+		return DateTime(val)
+	else
+		local day, month, year = unpack(val:split(".",0,true,tonumber))
+		if month == 0 then
+			month = 12
+		end
+		if day == 0 then
+			local last = {31,28,31,30,31,30,31,31,30,31,30,31}
+			day = last[month]
+		end		
+		date = DateTime()
+		date.Year, date.Month, date.Day  = year, month, day
+		return date
+	end	
+end
+
+function FilterByExperience(rs)
+--	фильтрация по стажу
+	for rec in rs.Records do
+		local td_rs = rec:GetValue(90,"ТД")
+		if conditions.career then
+			td_rs:StringRequest("ОТ "..conditions.career)
+		end	
+		local exp = DateTimeSpan()
+		for td in td_rs.Records do
+			if td:GetValue(1) ~= "" then
+				local start = makedate(td:GetValue(1))
+				local finish = makedate(td:GetValue(2),"max")
+				exp = exp + (finish - start)
+			end	
+		end
+		if exp.Days/365 < conditions.experience then
+			rs:Remove(rec.SN)
+		end
+	end	
+	return rs
 end
 
 function MakeRequest()
