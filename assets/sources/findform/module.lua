@@ -1,6 +1,7 @@
 local conditions = {}
 local education = {}
 local career = {}
+local address = {}
 
 function Форма_Load ( form, event )
 
@@ -68,6 +69,7 @@ function MakeRequest()
 	end
 	
 --	стаж
+	AgeValidation({Control = Me.txtExperience})
 	if Me.txtExperience.Text ~= "" then
 		conditions.experience = tonumber(Me.txtExperience.Text)
 	end
@@ -88,6 +90,22 @@ function MakeRequest()
 		table.insert(conditions,"90 ТД03")
 	end
 
+--	место проживания	
+	if table.count(address) > 0 then
+		local tmpAreas = {}
+		for area,cities in pairs(address) do
+			local s = "1 РВ "..area
+			if #cities > 0 then
+				local tmp = {}
+				table.foreach(cities, function(k,item) tmp[k] = "3 РВ "..item:quote([["]]) end)
+				s = s.." И "..table.concat(tmp," ИЛИ ")
+			end
+			table.insert(tmpAreas,"("..s..")")
+		end
+		conditions.address = "АД04 "..table.concat(tmpAreas, " ИЛИ ")
+		table.insert(conditions,"80 АД04")
+	end
+
 	if #conditions > 0 then
 		req = req.." "..table.concat(conditions," И ")
 		if conditions.edu then
@@ -95,6 +113,9 @@ function MakeRequest()
 		end
 		if conditions.career then 
 			req = req.." "..conditions.career
+		end
+		if conditions.address then
+			req = req.." "..conditions.address
 		end
 	end
 		
@@ -196,5 +217,22 @@ function btnCareer_Click( control, event )
 	if args.ModalResult == 1 then
 		career = args.selection
 		Me.txtCareer.Text = table.concat(career,"; ")
+	end
+end
+
+function btnAddress_Click( control, event )
+	args = {selection = address}
+	GetBank():OpenForm("Города",0,Me,args)
+	if args.ModalResult == 1 then
+		address = args.selection
+		local tmpAreas = {}
+		for area, cities in pairs(address) do
+			if #cities > 0 then
+				table.insert(tmpAreas,cities.Name..": "..table.concat(cities,","))
+			else	
+				table.insert(tmpAreas,cities.Name) 
+			end	
+		end
+		Me.txtAddress.Text = table.concat(tmpAreas,"; ")
 	end
 end
