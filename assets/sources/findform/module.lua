@@ -17,7 +17,9 @@ function Форма_Load ( form, event )
 		else	
 			ctrl.TypeValidationCompleted = ExperienceValidation
 		end	
+		ctrl.KeyDown = AgeKeyDown
 	end
+	
 end
 
 function Line(name, y)
@@ -50,6 +52,7 @@ function btnFind_Click( control, event )
 		MsgBox(err)
 	end
 end
+
 
 function makedate(val,mode)
 --	пустое значение: дата отсутствует
@@ -258,6 +261,31 @@ function ExperienceValidation( event )
 	control.Text = val:match("%d+")
 end
 
+function AgeKeyDown( event )
+--	спинер для возраста: значение в поле увеличивается 
+--	или уменьшается при нажатии клавиш со стрелками
+	if event.Key == Keys.Up or event.Key == Keys.Down then
+		AgeValidation(event)
+		if event.Control.Text == "" then
+			event.Control.Text = 0
+			event.Handled = true
+			return
+		end	
+		local val = tonumber(event.Control.Text) 
+		if val and event.Key == Keys.Up and event.ShiftPressed then
+			event.Control.Text = val + 10
+		elseif val and event.Key == Keys.Up then
+			event.Control.Text = val + 1
+		elseif val and event.Key == Keys.Down and val > 10 and event.ShiftPressed then
+			event.Control.Text = val - 10
+		elseif val and event.Key == Keys.Down and val > 0 then
+			event.Control.Text = val - 1
+		end	
+		event.Handled = true
+		return
+	end	
+end
+
 function btnEducation_Click( control, event )
 	args = {field = "ОБ4", title="Направления подготовки",selection = education}
 	GetBank():OpenForm("словарик",0,Me,args)
@@ -290,5 +318,47 @@ function btnAddress_Click( control, event )
 			end	
 		end
 		Me.txtAddress.Text = table.concat(tmpAreas,"; ")
+	end
+end
+
+function txtEducation_KeyDown( event )
+	if event.Key == Keys.F2 and event.CtrlPressed then
+		event.Handled = true
+		btnEducation_Click(Me.btnEducation)
+	elseif event.Key == Keys.Delete and event.CtrlPressed then
+		event.Handled = true
+		Me.txtEducation.Text = ""
+		education = {}
+	end
+end
+
+function txtCareer_KeyDown( event )
+	if event.Key == Keys.F2 and event.CtrlPressed then
+		event.Handled = true
+		btnCareer_Click(Me.btnCareer)
+	elseif event.Key == Keys.Delete and event.CtrlPressed then
+		event.Handled = true
+		Me.txtCareer.Text = ""
+		career = {}
+	end
+end
+
+function txtAddress_KeyDown( event )
+	if event.Key == Keys.F2 and event.CtrlPressed then
+		event.Handled = true
+		btnAddress_Click(Me.btnAddress)
+	elseif event.Key == Keys.Delete and event.CtrlPressed then
+		event.Handled = true
+		Me.txtAddress.Text = ""
+		address = {}
+	end
+end
+
+function Форма_KeyPreview( event )
+	if event.Key == Keys.F and event.CtrlPressed and 
+		event.Type == event.Pressed then
+		event.Handled = true
+		Me.btnFind.Focused = true
+		btnFind_Click(Me.btnFind)
 	end
 end
