@@ -5,7 +5,7 @@ date:   2022-02-17
 categories: Формулы
 ---
 
-Тема этого поста навеяна опросом, который предложил один из участников телеграмм-чата [CronosProChat](https://t.me/CronosProChat/4986):
+Поводом для написания данного поста послужил опрос, который предложил один из участников телеграмм-чата [CronosProChat](https://t.me/CronosProChat/4986):
 
 ![Опрос с CronosProChat](../assets/img/220217_cmp.jpg "Источник: https://t.me/CronosProChat/4986")  
 *Источник: https://t.me/CronosProChat/4986*
