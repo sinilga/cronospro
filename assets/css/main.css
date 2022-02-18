@@ -405,6 +405,11 @@ menu {
   display: block;
 }
 
+details {
+  color: #000080;
+  background-color: #F0F0FF;
+}
+
 /*
  * Add the correct display in all browsers.
  */
