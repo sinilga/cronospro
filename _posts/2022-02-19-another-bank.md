@@ -56,7 +56,7 @@ categories: Формулы, планировщик
 
 ### Шаг 1. Формируем список наименований организаций
 
-```
+```perl
 @rg_list:=""
 @rs:=find("ОТ РГ01 100 КРАТ РВ 0 АД02 АД02")
 @i:=1; @n:=valcount(@rs)
@@ -77,7 +77,7 @@ setglobal("rg_list",@rg_list)
 (системный_номер, наименование_РГ). 
 
 ### Шаг 2. Проверка в банке Primer2
-```
+```perl
 @rg_list:=getglobal("rg_list")	
 
 @i:=1; @n:=valcount(@rg_list)
@@ -100,7 +100,7 @@ setglobal("rg_list",@rg_list)
 
 ### Шаг 3. Обработка результатов в банке Primer
 
-```
+```perl
 @rg_list:=getglobal("rg_list")	
 @i:=1; @n:=valcount(@rg_list)
 while (@i <= @n) do [
