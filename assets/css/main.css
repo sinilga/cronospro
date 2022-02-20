@@ -2,8 +2,7 @@
 /* Document16:51 06.12.2019
    ========================================================================== */
 /**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in
+* 2. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
 html {
@@ -408,6 +407,8 @@ menu {
 details {
   color: #000080;
   background-color: #F0F0FF;
+  border-botom: solid 1px gray;
+  border-top: solid 1px gray;
 }
 
 /*
