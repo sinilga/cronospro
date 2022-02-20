@@ -1273,9 +1273,8 @@ a.newer-posts:hover {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
   margin: 50px 0 10px 0;
-  border-bottom: 1px solid #a0a0a0;
 }
 
 .page-footer .page-share {
@@ -1303,6 +1302,10 @@ a.newer-posts:hover {
 
 .page-footer .page-share a:hover {
   background-color: #ecf0f1;
+}
+
+.page-footer .page-tag {
+  margin-bottom: 10px;
 }
 
 .page-footer .page-tag a {
