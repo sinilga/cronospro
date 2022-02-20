@@ -1274,7 +1274,7 @@ a.newer-posts:hover {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   padding-bottom: 30px;
-  margin: 30px 0;
+  margin: 50px 0 10px 0;
   border-bottom: 1px solid #a0a0a0;
 }
 
@@ -1318,6 +1318,15 @@ a.newer-posts:hover {
 .page-footer .page-tag a:hover {
   text-decoration: underline;
 }
+
+.page-template {
+  border-top: solid 1px gray;
+}
+
+.page-template p {
+  margin:0;
+}
+
 
 /* - - - - - - - - - - Tag Styles - - - - - - - - - - */
 .blog-tags {
