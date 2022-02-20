@@ -407,8 +407,9 @@ menu {
 details {
   color: #000080;
   background-color: #F0F0FF;
-  border-botom: solid 1px gray;
-  border-top: solid 1px gray;
+  border-botom: solid 1px dimgray;
+  border-top: solid 1px dimgray;
+  padding: 2px 10px;
 }
 
 /*
