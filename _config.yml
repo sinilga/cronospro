@@ -1,5 +1,5 @@
 title: CronosPro: сборник рецептов
-description: > Опыт использования ИСУБД CronosPro, примеры наработок: проектирование форм ввода, программирование на Lua и языке формулч
+description: Опыт использования ИСУБД CronosPro, примеры наработок: проектирование форм ввода, программирование на Lua и языке формулч
 permalink: ':title/'
 baseurl: "/" # the subpath of your site, e.g. /blog
 # url: "/" # the base hostname & protocol for your site, e.g. http://example.com
