@@ -17,6 +17,11 @@ layout: main
    {% else %} 
       <p>{{ post.content | strip_html | truncatewords: 15 }}</p>
    {% endif %} 
+   <div class="page-tag">
+     {% for tag in page.tags %}
+       <a href="{{site.baseurl}}/tags#{{tag}}" class="tag">&#35; {{ tag }}</a>
+     {% endfor %}
+    </div>
     <span class="post-date">{{post.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
     <span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " minute read" }}{% endunless %}</span>
   </div>
