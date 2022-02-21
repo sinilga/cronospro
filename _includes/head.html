@@ -6,7 +6,7 @@
     <meta name="keywords" content="{{page.categories}}">
   {% endif %}
   {% if page.tags %}
-    <meta name="keywords" content="{{page.tags}}">
+    <meta name="keywords" content="{% for tag in page.tags %}{{tag}}, {% endfor %}">
   {% endif %}
 	
   <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
