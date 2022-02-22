@@ -1186,12 +1186,10 @@ footer .copyright {
 .post-tag {
   margin-bottom: 10px;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-start;	
 }
 
 .post-tag a {
-   text-decoration: none;
+  text-decoration: none;
   font-size: 9pt;
   padding: 2px 10px;
   margin-left: 5px;
