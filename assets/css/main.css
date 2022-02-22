@@ -1183,6 +1183,27 @@ footer .copyright {
   margin-top: 0;
 }
 
+.post-tag {
+  margin-bottom: 10px;
+}
+
+.post-tag a {
+  font-family: Arial;
+  text-decoration: none;
+  font-size: small;
+  padding: 2px 5px;
+  margin-left: 5px;
+  color: #263959;
+  text-transform: lowercase;
+  background-color:silver;
+  /*border: 1px solid #263959;*/
+}
+
+.post-tag a:hover {
+  text-decoration: underline;
+}
+
+
 a.older-posts, a.newer-posts {
   font-size: 18px;
   display: inline-block;
@@ -1319,24 +1340,6 @@ a.newer-posts:hover {
 }
 
 .page-footer .page-tag a:hover {
-  text-decoration: underline;
-}
-
-.post-tag {
-  margin-bottom: 10px;
-}
-
-.post-tag a {
-  text-decoration: none;
-  font-size: 10px;
-  padding: 5px 10px;
-  margin-left: 5px;
-  color: #263959;
-  text-transform: lowercase;
-  border: 1px solid #263959;
-}
-
-.post-tag a:hover {
   text-decoration: underline;
 }
 
