@@ -1185,18 +1185,19 @@ footer .copyright {
 
 .post-tag {
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;	
 }
 
 .post-tag a {
-  font-family: Arial;
-  text-decoration: none;
-  font-size: small;
-  padding: 2px 5px;
+   text-decoration: none;
+  font-size: 9pt;
+  padding: 2px 10px;
   margin-left: 5px;
   color: #263959;
   text-transform: lowercase;
-  background-color:silver;
-  /*border: 1px solid #263959;*/
+  background-color:#e4e8ff;
 }
 
 .post-tag a:hover {
