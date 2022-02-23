@@ -8,7 +8,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 # Author Settings
 author: Sinilga # add your name
 author-img: "unnamed.png" # add your photo
-about-author: Инженер данных, преподаватель. Специализацияя - проектирование и ведение банков данных под управлением ИСУБД CronosPro. 
+about-author: Инженер данных, преподаватель. Специализация - проектирование и ведение банков данных под управлением ИСУБД CronosPro. 
 social-github: sinilga # add your Github handle
 social-email: sinilga7@yandex.ru # add your Email address
 
