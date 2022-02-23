@@ -35,7 +35,13 @@ layout: main
       <div class="page-template">
         <p>Страница создана на основе шаблона <a href="https://github.com/artemsheludko/flexible-jekyll">flexible-jekyll</a></p>
       </div>
-      {% include disqus.html %}
+<!--      {% include disqus.html %} -->
+{% if post.disqus %}
+  <div class="disqus">
+    <a href"https://github.com/sinilga/sinilga.github.io/{{post.disqus}}" target="_blank">Обсудить статью</a>
+  </div>
+{% endif %}
+    
     </div> <!-- End Wrap Content -->
   </div> <!-- End Page Content -->
 </article> <!-- End Article Page -->
