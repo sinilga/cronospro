@@ -24,9 +24,12 @@ analytics: # Google Analytics
 
 # Build Settings
 markdown: kramdown
+
 kramdown:
-   coderay_line_numbers: table
-   
+  syntax_highlighter: coderay
+  syntax_highlighter_opts:
+    line_numbers: table
+    bold_every: 5   
 
 plugins:
   - jekyll-sitemap
