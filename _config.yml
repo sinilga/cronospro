@@ -28,7 +28,6 @@ markdown: kramdown
 kramdown:
   syntax_highlighter: coderay
   syntax_highlighter_opts:
-    line_numbers: true
     tab_width: 2
 
 plugins:
