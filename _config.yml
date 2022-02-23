@@ -28,8 +28,8 @@ markdown: kramdown
 kramdown:
   syntax_highlighter: coderay
   syntax_highlighter_opts:
-    line_numbers: table
-    bold_every: 5   
+    line_numbers: true
+    tab_width: 2
 
 plugins:
   - jekyll-sitemap
