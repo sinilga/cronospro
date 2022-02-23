@@ -841,6 +841,7 @@ pre code {
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-all;
+  tab-size:3;	
     -o-tab-size: 3; /* Opera */
     -moz-tab-size: 3; /* Firefox */	
 }
