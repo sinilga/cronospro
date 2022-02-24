@@ -32,15 +32,16 @@ layout: main
           {% endfor %}
         </div>
       </div>
+   {% if page.disqus %}
+      <div class="disqus">
+         <a href="https://github.com/sinilga/sinilga.github.io/{{page.disqus}}" target="_blank">Оставить комментарии или задать вопрос можно в разделе Discussition github-репозитория</a>
+      </div>
+   {% endif %}
+
       <div class="page-template">
         <p>Страница создана на основе шаблона <a href="https://github.com/artemsheludko/flexible-jekyll">flexible-jekyll</a></p>
       </div>
 {% comment %}      {% include disqus.html %}  {% endcomment %}
-{% if page.disqus %}
-  <div class="disqus">
-    <a href="https://github.com/sinilga/sinilga.github.io/{{page.disqus}}" target="_blank">Обсудить статью</a>
-  </div>
-{% endif %}
     
     </div> <!-- End Wrap Content -->
   </div> <!-- End Page Content -->
