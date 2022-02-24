@@ -1208,6 +1208,17 @@ footer .copyright {
   text-decoration: underline;
 }
 
+.discus {
+    background-color: #ddebf2;
+    padding: 5px 15px;
+    margin-bottom: 20px;
+    border: solid 1px #78909c;
+}
+
+.discus a {
+    text-decoration: none;
+    color: black;
+}
 
 a.older-posts, a.newer-posts {
   font-size: 18px;
