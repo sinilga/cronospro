@@ -2,6 +2,7 @@
 layout: post   
 title:  О приведении типов в формулах   
 date:   2022-02-17   
+discus: discussions/6
 tags: [ Формулы ]
 ---
 
