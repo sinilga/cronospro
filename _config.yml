@@ -29,6 +29,7 @@ kramdown:
   syntax_highlighter: coderay
   syntax_highlighter_opts:
     tab_width: 2
+    line_mumbers: inline
 
 plugins:
   - jekyll-sitemap
