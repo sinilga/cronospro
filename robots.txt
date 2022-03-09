@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://sinilga.github.io/sitemap.xml
