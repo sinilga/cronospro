@@ -20,7 +20,7 @@ social-email: sinilga7@yandex.ru # add your Email address
 # discus-identifier: Sinilga # add your discus identifier
 
 # Tracker
-analytics: # Google Analytics
+analytics: Google Analytics
 
 # Build Settings
 markdown: kramdown
