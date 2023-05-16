@@ -16,7 +16,7 @@ sitemap:
 {% for page in site.pages %}{% unless page.sitemap.exclude == "yes" %}
     <url>
         <loc>{{ site.url }}{{ page.url }}</loc>
-        <lastmod>{{ page.path | file_date | date_to_xmlschema }}</lastmod>
+        <lastmod>{{ page.path | file-date | date_to_xmlschema }}</lastmod>
     </url>
 {% endunless %}{% endfor %}
 
